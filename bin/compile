@@ -126,7 +126,8 @@ popd &> /dev/null
 # /pypy fixes #####
 
 ##### pypy datetime patch #####
-curl -sLO $DATETIME_PATCH > $BUILD_DIR/lib_pypy/
+echo "-----> Patching pypy"
+curl -sL $DATETIME_PATCH > $BUILD_DIR/lib_pypy/datetime.py
 
 # remove "tests" dir from pypy sources
 rm -fr $BUILD_DIR/lib-python/2.7/test/
